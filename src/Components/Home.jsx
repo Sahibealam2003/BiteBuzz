@@ -4,13 +4,13 @@ import restaurant from '../assets/restaurant.png';
 import grocery from '../assets/grocery.png'
 import dineout from '../assets/dineout.png'
 import genie from '../assets/genie.png'
-import left  from '../assets/left.png'
-import right  from '../assets/right.png'
+import left from '../assets/left.png'
+import right from '../assets/right.png'
 import { Link } from 'react-router-dom';
 const Home = () => {
     return (
         <>
-            <div className='bg-[#FF5200] text-white w-[100%] h-[100vh]'>
+            <div className='bg-[#FF5200] text-white w-[100%] min-h-[100vh]'>
                 {/* Navbar idhar hai */}
                 <nav className='flex justify-between p-20 items-center h-[100px]'>
                     <div className='w-[170px]'>
@@ -18,16 +18,15 @@ const Home = () => {
                     </div>
 
                     <div className='flex gap-7'>
-                        <button>Swiggy Corporate</button>
-                        <button>Partner with us</button>
-                        <button className='flex items-center gap-2 border border-white px-6 py-3 rounded'>
+                        <button className='cursor-pointer'>Swiggy Corporate</button>
+                        <button className='cursor-pointer'>Partner with us</button>
+                        <button className='flex items-center gap-2 border cursor-pointer border-white px-6 py-3 rounded'>
                             <p>Get the App</p>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 25 25"
                                 className="w-5 h-5 fill-current mt-[5px] font-bold"
                             >
-
                                 <g id="Right">
                                     <polygon
                                         points="17.5 5.999 16.793 6.706 22.086 11.999 1 11.999 1 12.999 22.086 12.999 16.792 18.294 17.499 19.001 24 12.499 17.5 5.999"
@@ -39,21 +38,20 @@ const Home = () => {
                             </svg>
                         </button>
 
-                        <button className='bg-black px-5 py-2 rounded'>Sign In</button>
+                        <button className='bg-black px-5 py-2 rounded cursor-pointer'>Sign In</button>
                     </div>
                 </nav>
                 {/* LEFT AND RIGTH IMG */}
-                    <div className='relstive'> <img src={left} className='drop-shadow-[0_30px_9px_rgba(000,000,000,0.5)] w-[150px] absolute bottom-[100px]' /></div>
-                    <div className='relstive'> <img src={right} className='drop-shadow-[0_30px_9px_rgba(000,000,000,0.5)] w-[150px] absolute bottom-[100px] right-0' /></div>
+                <div className='relstive'> <img src={left} className='drop-shadow-[0_30px_9px_rgba(000,000,000,0.5)] w-[250px] absolute top-[90px] bottom-[100px]' /></div>
+                <div className='relstive'> <img src={right} className='drop-shadow-[0_30px_9px_rgba(000,000,000,0.5)] w-[240px] absolute  bottom-[0px] right-0' /></div>
                 {/* Section Idhar hai */}
                 <section className='w-[100%] flex flex-col justify-center items-center'>
-                    <p className='text-[50px] '>Order food & groceries. </p>
-                    <p className='text-[50px] leading-none'>Discover best restaurants. Swiggy it!</p>
+                    <p className='text-[50px] font-bold'>Order food & groceries. </p>
+                    <p className='text-[50px] font-bold leading-none'>Discover best restaurants. Swiggy it!</p>
 
                     <div className='mt-[50px] text-black relative'>
                         <input className='border-none bg-white rounded h-[50px] w-[400px] placeholder-gray-400 px-2 focus:outline-none focus:border-none' placeholder='Search for restaurant, item or more' />
-                        <svg className='w-[20px] fill-black absolute right-[25px] top-1/3' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path stroke="black"
-                            strokeWidth="1" d="M21.15 19.74a12 12 0 1 0-1.41 1.41l10.55 10.56 1.41-1.41zM12 22a10 10 0 1 1 10-10 10 10 0 0 1-10 10z" data-name="49-Search" /></svg>
+                        <svg className='w-[17px] fill-black absolute right-[25px] top-1/3' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" /></svg>
                     </div>
 
                     <div className='flex justify-between w-[60%] mt-10'>

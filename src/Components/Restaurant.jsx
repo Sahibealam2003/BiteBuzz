@@ -1,8 +1,18 @@
 import React from 'react'
+import { Link, Route, Routes } from 'react-router-dom'
+import ResNavbar from './ResNavbar'
 
 const Restaurant = () => {
   return (
-    <div>Restaurant</div>
+    <>
+     <div>
+      
+     </div>
+
+      <Routes>
+        <Route path='/' element={<ResNavbar/>} />
+      </Routes>
+    </>
   )
 }
 
