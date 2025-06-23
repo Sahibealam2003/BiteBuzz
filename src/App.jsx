@@ -2,7 +2,18 @@ import {Routes,Route} from 'react-router-dom'
 import Home from './Components/Home'
 import Restaurant from './Components/Restaurant'
 import Error from './Components/Error'
+import { useGlobalContext } from './Utils/Contex/ApiContext'
 const App = () => {
+   const{setLat, setLong} = useGlobalContext()
+
+
+    navigator.geolocation.getCurrentPosition((position) => {
+        const lat = position.coords?.latitude
+        const long = position.coords?.longitude
+
+        setLat(lat)
+        setLong(long)
+    })
   return (
     <>
     <div>
