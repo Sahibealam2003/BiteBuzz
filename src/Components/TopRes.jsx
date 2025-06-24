@@ -6,14 +6,14 @@ const TopRes = ({ header, subHeader, imageId, name, avgRating, slaString, cuisin
   const { cdn } = useGlobalContext()
 
   return (
-    <div className={`${size==='lg' ? "transform transition-transform duration-200 hover:scale-105":""}`}>
-      <div className={`relative cursor-pointer ${size === "sm" ? "w-[300px]" : "w-[250px]"}`}>
+    <div className={`${size==='lg' ? "":""}`}>
+      <div className={`relative cursor-pointer ${size === "sm" ? "w-[300px]" : "w-[250px] hover:transform transition-transform duration-200 hover:scale-105"}`}>
         <img src={cdn + imageId} alt="" className={`${size ==='sm' ? 'h-[200px]' : 'h-[160px]'} w-[100%] rounded-2xl`} />
         {header && <p className='absolute bottom-1 left-2 text-white font-bold'>{header + (subHeader || "")}</p>}
 
       </div>
 
-      <div>
+      <div className='mt-2'>
         <h2 className='font-bold'>{name.length > 25 ? name.slice(0, 25) + "..." : name}</h2>
         <p className='flex text-sm'>
           
