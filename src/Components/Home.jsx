@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     return (
         <>
-            <div className='bg-[#FF5200] text-white w-[100%] min-h-[100vh]'>
+            <div className='bg-[#FF5200] font-gilroy text-white w-[100%] min-h-[100vh]'>
                 {/* Navbar idhar hai */}
                 <nav className='flex justify-between p-20 items-center h-[100px]'>
                     <div className='w-[170px]'>
@@ -59,7 +59,7 @@ const Home = () => {
                         <Link to={'/restaurants'} className='group'>
                             <div className='flex flex-col justify-start items-start pl-4 bg-white rounded-tl-[35px] group-hover:drop-shadow-[0_0px_20px_rgba(255,255,255,0.5)]  drop-shadow-[0_30px_9px_rgba(000,000,000,0.5)]  pt-4'>
                                 <h1 className='font-bold text-black leading-5'>FOOD DELIVERY</h1>
-                                <p className='text-gray-400 text-[13px]   tracking-tight' >FROM RESTAURANT</p>
+                                <p className='text-gray-400 text-[13px] font-medium  tracking-tight' >FROM RESTAURANT</p>
                                 <p className='px-2 bg-red-300 text-[10px] rounded-[10px] font-bold leading-5'>UPTO 60% OFF</p>
                                 <div className='flex items-center'>
                                     <svg
@@ -90,7 +90,7 @@ const Home = () => {
                         <Link to={'/grocery'} className='group'>
                             <div className='rounded-tl-[35px] group-hover:drop-shadow-[0_0px_20px_rgba(255,255,255,0.5)] drop-shadow-[0_30px_9px_rgba(000,000,000,0.5)] flex flex-col justify-start items-start pt-4 pl-4 bg-white rounded-[2px]'>
                                 <h1 className='font-bold text-black leading-5'>INSTAMART</h1>
-                                <p className='text-gray-400 text-[13px]  tracking-tight' >INSTANT GROCERY</p>
+                                <p className='text-gray-400 text-[13px] font-medium tracking-tight' >INSTANT GROCERY</p>
                                 <p className='px-2 bg-red-300 text-[10px] rounded-[10px] font-bold leading-5'>UPTO 60% OFF</p>
                                 <div className='flex items-center'>
                                     <svg
@@ -121,8 +121,8 @@ const Home = () => {
                         {/*for dineout */}
                         <Link to={'/dineout'} className='group'>
                             <div className='rounded-tl-[35px] group-hover:drop-shadow-[0_0px_20px_rgba(255,255,255,0.5)] drop-shadow-[0_30px_9px_rgba(000,000,000,0.5)] pt-4 flex flex-col justify-start items-start pl-4 bg-white rounded-[2px]'>
-                                <h1 className='font-bold text-black leading-5'>DINEOUT</h1>
-                                <p className='text-gray-400 text-[13px]  tracking-tight' >EAT OUT & SAVE MORE</p>
+                                <h1 className='font-bold text-black  leading-5'>DINEOUT</h1>
+                                <p className='text-gray-400 text-[13px] font-medium tracking-tight' >EAT OUT & SAVE MORE</p>
                                 <p className='px-2 bg-red-300 text-[10px] rounded-[10px] font-bold leading-5'>UPTO 50% OFF</p>
                                 <div className='flex items-center'>
                                     <svg
@@ -153,7 +153,7 @@ const Home = () => {
                         <Link to={'/genie'} className='group'>
                             <div className='rounded-tl-[35px] group-hover:drop-shadow-[0_0px_20px_rgba(255,255,255,0.5)] drop-shadow-[0_30px_9px_rgba(000,000,000,0.5)] flex flex-col pt-4 justify-start items-start pl-4 bg-white rounded-[2px]'>
                                 <h1 className='font-bold text-black leading-5'>GENIE</h1>
-                                <p className='text-gray-400 text-[13px]  tracking-tight' > PICK-UP & DROP</p>
+                                <p className='text-gray-400 text-[13px] font-medium tracking-tight' > PICK-UP & DROP</p>
                                 <p className='px-2 bg-red-300 text-[10px]  rounded-[10px] font-bold leading-5'>FAST DELIVERY</p>
                                 <div className='flex items-center'>
                                     <svg

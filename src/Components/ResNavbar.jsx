@@ -33,8 +33,8 @@ const ResNavbar = () => {
     getLocation()
   }, [lat, long])
   return (
-    <div>
-      <nav className='h-[70px] flex justify-between items-center p-6 shadow-xl'>
+    <div className='font-gilroy'>
+      <nav className='h-[70px]  flex justify-between items-center p-6 shadow-xl'>
         <div className='flex gap-16 items-center'> <svg
           onClick={() => navigate('/home')}
           className="cursor-pointer VXJlj"
@@ -62,7 +62,7 @@ const ResNavbar = () => {
             </clipPath>
           </defs>
         </svg>
-          <p className="hover:text-orange-400 hover:cursor-pointer"><span className="underline">Other</span> &nbsp; {place && place.length > 20 ? place.slice(0, 30) : place}...</p>
+          <p className="hover:text-orange-400 transition-transform duration-200 hover:scale-105 hover:underline"><span>{place && place.length > 20 ? place.slice(0, 30) : place}...</span><i class="fa-solid fa-location-dot"></i></p>
         </div>
 
         <div className='flex gap-6'>
