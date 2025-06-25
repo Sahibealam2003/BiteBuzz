@@ -93,15 +93,6 @@ const Restaurant = () => {
         setNearResTitle(apiData.data?.cards[8]?.card?.card?.title)
         setBestExp(apiData.data?.cards[9]?.card?.card)
         setResCities(apiData.data?.cards[10]?.card?.card?.cities)
-        console.log(apiData);
-
-
-
-
-
-
-
-
 
       } catch (error) {
         console.log(error)
@@ -271,6 +262,7 @@ const Restaurant = () => {
                   })
                 }
                 <button
+                title='Click to Show all Cities'
                   onClick={toggleShowMore}
                   className='border-2 font-medium rounded-2xl text-orange-500 h-[60px] w-[80%]  border-gray-200 mt-2 flex items-center justify-center'>
                   <p className=''>Show More</p>
@@ -294,7 +286,7 @@ const Restaurant = () => {
 
 
 
-            <div className='mt-5 mb-10'>
+            <div  className='mt-5 mb-10'>
               <h2 className='text-[25px] font-bold mb-5'>{cuisinesTitle}</h2>
               <div className='grid grid-cols-4 gap-4' >
                 {
@@ -313,6 +305,7 @@ const Restaurant = () => {
                   })
                 }
                 <button
+                title='Click to Show all Cuisines'
                   onClick={toggleShowMoreCuisines}
                   className='border-2 font-medium rounded-2xl text-orange-500 h-[60px] w-[80%]  border-gray-200 mt-2 flex items-center justify-center'>
                   <p className=''>Show More</p>
@@ -382,9 +375,11 @@ const Restaurant = () => {
             )
           }
 
-          <div className='flex justify-between mt-10 mb-5 '>
+          <div title='Click to Show all Cities' className='flex justify-between mt-15 mb-6 '>
             <div className=''>
+              
               <svg
+              
               className='cursor-pointer hover:scale-105 transition-transform duration-200 '
               onClick={()=>navigate('/home')}
                xmlns="http://www.w3.org/2000/svg" width="160" height="49" fill="none">
@@ -516,11 +511,11 @@ const Restaurant = () => {
       <hr className="border border-[rgba(2,6,12,.50)]" />
 
           {/* All cities */}
-          <div className='w-[68%] m-auto ' >
+          <div className='w-[68%] m-auto' >
             {!isExpandedCities ? "" : (
-              <div className='mt-5 mb-10'>
+              <div className='mt-5 pb-10'>
                 <h2 className='text-xl font-bold'>Other cities that we deliver:</h2>
-                <ul className='grid grid-cols-4 mt-5'>
+                <ul className='grid grid-cols-4 mt-2'>
                   {resCities && resCities.map((item) => {
                     return (
                       <li className='leading-8 text-gray-600 font-medium '><a>{item.text}</a></li>

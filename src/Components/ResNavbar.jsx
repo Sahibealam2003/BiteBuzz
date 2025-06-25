@@ -37,7 +37,7 @@ const ResNavbar = () => {
       <nav className='h-[70px]  flex justify-between items-center p-6 shadow-xl'>
         <div className='flex gap-16 items-center'> <svg
           onClick={() => navigate('/home')}
-          className="cursor-pointer VXJlj"
+          className='cursor-pointer hover:scale-105 transition-transform duration-200 '
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 61 61"
           height="49"
@@ -62,7 +62,18 @@ const ResNavbar = () => {
             </clipPath>
           </defs>
         </svg>
-          <p className="hover:text-orange-400 transition-transform duration-200 hover:scale-105 hover:underline"><span>{place && place.length > 20 ? place.slice(0, 30) : place}...</span><i class="fa-solid fa-location-dot"></i></p>
+{place && (
+  <p className="cursor-pointer hover:text-orange-400 transition-transform duration-200 hover:scale-105">
+    <span>
+      <span className="underline underline-offset-4">
+        {place.split(" ")[0]}
+      </span>{" "}
+      {place.split(" ").slice(1).join(" ").slice(0, 33)}...
+    </span>
+    <i className="fa-solid fa-location-dot ml-1"></i>
+  </p>
+)}
+
         </div>
 
         <div className='flex gap-6'>

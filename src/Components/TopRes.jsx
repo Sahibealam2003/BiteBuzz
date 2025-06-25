@@ -7,7 +7,7 @@ const TopRes = ({ header, subHeader, imageId, name, avgRating, slaString, cuisin
 
   return (
     <div className={`${size==='lg' ? "":""} font-medium`}>
-      <div className={`relative cursor-pointer ${size === "sm" ? "w-[300px]" : "w-[250px] hover:transform transition-transform duration-200 hover:scale-105"}`}>
+      <div className={`relative cursor-pointer ${size === "sm" ? "w-[300px] hover:scale-90 transition-transform duration-200" : "w-[250px] transition-transform duration-200 hover:scale-105"}`}>
         <img src={cdn + imageId} alt="" className={`${size ==='sm' ? 'h-[200px]' : 'h-[160px]'} w-[100%] rounded-2xl`} />
         {header && <p className='absolute bottom-1 left-2 text-white font-bold'>{header + (subHeader || "")}</p>}
 
