@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import AccordionsCard from "./AccordionsCard";
 
-const Accordions = ({ title, data }) => {
+const Accordions = ({ title, data, nested ,isLast }) => {
   const [isExpandedAccordions, setIsExpandedAccordions] = useState();
-  console.log(isExpandedAccordions);
+
 
   return (
-    <div className="w-[100%]">
+    <div className={"w-[100%] pb-2 "+(nested ? (isLast ? "": "border-b  border-gray-300") : "") }>
       <div className=" flex justify-between">
-        <p>
+        <p className={`mt-3 ml-3 ${nested ? "text-[15px] font-medium " : "text-[20px] font-bold"}`}>
           {title}({data.length})
         </p>
 
         <svg
           onClick={() => setIsExpandedAccordions(!isExpandedAccordions)}
-          className={`cursor-pointer mt-1 transition-transform duration-400 ${
+          className={`mr-3 cursor-pointer mt-1 transition-transform duration-400 ${
             isExpandedAccordions ? "rotate-180" : ""
           }`}
           xmlns="http://www.w3.org/2000/svg"
@@ -27,15 +27,25 @@ const Accordions = ({ title, data }) => {
         </svg>
       </div>
 
+      
+
       <div>
         {isExpandedAccordions && (
           <div>
-            {data.map((item) => {
-              return <AccordionsCard  info={item.card.info}/>;
+            {data.map((item,index) => {
+              return (
+                <>
+                <AccordionsCard isLast={index==data.length-1}  info={item.card.info}/>
+                
+                </>
+              )
             })}
           </div>
         )}
       </div>
+
+
+      
     </div>
   );
 };

@@ -21,9 +21,7 @@ const SliderItemData = () => {
         const data = await res.json();
 
         // Set description
-        setDescription(
-          data.data?.cards?.[0]?.card?.card?.description || ""
-        );
+        setDescription(data.data?.cards?.[0]?.card?.card?.description || "");
 
         // Extract restaurants
         const restaurants = data.data?.cards?.slice(2) || [];
@@ -42,16 +40,14 @@ const SliderItemData = () => {
   return (
     <div>
       <ResNavbar />
-
+      
       {/* Header */}
-      <h2 className="text-5xl font-bold ml-10 mt-6 capitalize">{text}</h2>
-      <p className="text-[20px] ml-12 mt-2 text-gray-600">{description}</p>
-
+      <h2 className=" text-5xl font-bold ml-15 mt-6 capitalize">{text}</h2>
+      <p className=" text-[20px] ml-14 mt-2 text-gray-600">{description}</p>
       {/* Loader or Content */}
-      {itemData.length === 0 ? (
-        <Skeleton />
-      ) : (
-        <div className="grid grid-cols-4 w-[95%] gap-6 ml-14 mt-10">
+      {itemData.length === 0 ? <Skeleton /> :
+       <div className="w-[95%] ml-14 mt-10">
+          <div className="grid grid-cols-4 gap-6">
           {itemData.map((item, index) => {
             const info = item?.card?.card?.info;
             if (!info) return null;
@@ -78,7 +74,7 @@ const SliderItemData = () => {
             );
           })}
         </div>
-      )}
+       </div>}
     </div>
   );
 };

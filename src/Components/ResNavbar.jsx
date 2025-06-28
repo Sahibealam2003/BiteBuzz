@@ -35,7 +35,8 @@ const ResNavbar = () => {
   return (
     <div className='font-gilroy'>
       <nav className='h-[70px]  flex justify-between items-center p-6 shadow-xl'>
-        <div className='flex gap-16 items-center'> <svg
+        <div className='flex gap-16 items-center'> 
+        <svg
           onClick={() => navigate('/home')}
           className='cursor-pointer hover:scale-105 transition-transform duration-200 '
           xmlns="http://www.w3.org/2000/svg"
