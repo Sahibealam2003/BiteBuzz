@@ -22,7 +22,7 @@ const TopRes = ({
       <div
         className={`relative cursor-pointer ${
           size === "sm"
-            ? "w-[300px]"
+            ? "w-[290px]"
             : "w-[250px]"
         }`}
       >
@@ -30,11 +30,11 @@ const TopRes = ({
         <img
           src={cdn + imageId}
           alt=""
-          className={`${
-            size === "sm" ? "h-[200px]" : "h-[160px]"
+          className={` ${
+            size === "sm" ? "h-[200px]" : "h-[170px]"
           } w-[100%] rounded-2xl`}
         />
-        <div className="absolute rounded-2xl inset-0 shadow-[inset_0px_0px_30px_rgba(0,0,0,1)]" />
+        <div className="absolute rounded-2xl inset-0 shadow-[inset_3px_-30px_40px_rgba(0,0,0,0.8)]" />
 </div>
         {header && (
           <p className="absolute bottom-1 left-4 text-white font-bold">
