@@ -135,6 +135,8 @@ const Restaurant = () => {
                     className="flex gap-4 overflow-x-scroll hide-scrollbar pb-5 "
                   >
                     {sliderData.map((item) => {
+                      
+                      
                       let str = item.action.link;
                       str = str.slice(35, 40);
 
@@ -185,6 +187,8 @@ const Restaurant = () => {
                     className="flex gap-3 overflow-scroll hide-scrollbar mt-5"
                   >
                     {topRes.map((item) => {
+                      
+                      
                       return (
                         <div key={item.info.id} onClick={() => navigate(`/menu/${item.info.id}`)}>
                           {/* item.info.id */}
@@ -222,6 +226,7 @@ const Restaurant = () => {
                   <div id="slider2" className="grid grid-cols-4 gap-8">
                     {onlineDelRes.map((item, index) => {
                       
+                      
 
                       return (
                         <div key={item.info.id} onClick={() => navigate(`/menu/${item.info.id}`)}>
@@ -251,10 +256,12 @@ const Restaurant = () => {
                 <div className="mt-7 mb-10">
                   <h2 className="text-[25px] font-bold mb-5">
                     {bestPlaceTitle}
+                    
                   </h2>
                   <div className="grid grid-cols-4 gap-4">
                     {(isExpanded ? bestPlace : bestPlace?.slice(0, 11))?.map(
                       (item, index) => (
+                      
                         <div key={index}>
                           <BestData text={item.text} />
                         </div>

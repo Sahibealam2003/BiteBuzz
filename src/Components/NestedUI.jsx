@@ -12,12 +12,12 @@ const NestedUI = ({title,data}) => {
                 
                     
                 return(
-                    <>
-                        <div className=''>
+                
+                        <div className='' key={index}>
 
                     <Accordions isLast={index == data.length-1} nested={true} key={item.categoryId} title={item.title} data={item.itemCards} />
                         </div>
-                    </>
+                    
                 )
             })}
         </div>

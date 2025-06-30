@@ -78,7 +78,7 @@ const ResNavbar = () => {
         </div>
 
         <div className='flex gap-6'>
-          <button><i className="mr-1 fa-solid fa-magnifying-glass"></i>Search</button>
+          <button  onClick={()=>navigate('/search')} ><i className="mr-1 fa-solid fa-magnifying-glass"></i>Search</button>
           <button><i className="mr-1 fa-solid fa-tags"></i>Offers</button>
           <button><i className="mr-1 fa-solid fa-cart-shopping"></i>Cart</button>
         </div>

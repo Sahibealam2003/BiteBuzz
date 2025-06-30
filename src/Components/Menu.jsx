@@ -19,7 +19,7 @@ const Menu = () => {
   const [fssai, setFssai] = useState({});
   const [resPlace, setResPlace] = useState({});
   const { lat, long, cdn, topDealscdn } = useGlobalContext();
-  console.log(resPlace);
+  
 
   // Scroll function for carousel
   function scrollFn(dir) {
@@ -171,6 +171,8 @@ const Menu = () => {
             >
               {topDeals.length > 0 &&
                 topDeals.map((item) => {
+                  console.log(item);
+                  
                   return (
                     <div
                       key={item.info.offerIds[0]}
