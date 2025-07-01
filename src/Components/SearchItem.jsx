@@ -9,12 +9,11 @@ const SearchItem = () => {
 
   const { cdn, lat, long } = useGlobalContext();
   useEffect(() => {
-      if (!query) {
-        setSuggestions("");
-        return;
-      }
+    if (!query) {
+      setSuggestions("");
+      return;
+    }
     const timerID = setTimeout(() => {
-    
       async function getItem() {
         const res = await fetch(
           `https://www.swiggy.com/dapi/restaurants/search/suggest?lat=${lat}&lng=${long}&str=${query}&trackingId=undefined&includeIMItem=true`
@@ -38,12 +37,24 @@ const SearchItem = () => {
       <div className="w-[100%] flex justify-center ">
         <div className="relative  w-[60%] mt-20 ">
           <input
+            value={query}
             onChange={(e) => setQuery(e.target.value)}
             type="text"
             placeholder="Hira Beta"
-            className="border w-[100%] caret-[#FE5005]  h-[45px] px-3 outline-none"
+            className="border placeholder-gray-600 placeholder:font-bold border-gray-400 rounded w-[100%] caret-[#FE5005] h-[45px] px-3 outline-none"
           />
-          <i className="mr-1 fa-solid fa-magnifying-glass absolute top-4 right-3"></i>
+
+          {query ? (
+            <i
+              onClick={() => {
+                setQuery("");
+                setSuggestions([]);
+              }}
+              className="mr-1 fa-solid  fa-xmark absolute top-4 right-3 cursor-pointer"
+            ></i>
+          ) : (
+            <i className="mr-1 fa-solid text-gray-600 fa-magnifying-glass absolute top-4 right-3"></i>
+          )}
         </div>
       </div>
       {suggestion && (
@@ -62,7 +73,11 @@ const SearchItem = () => {
                   className="w-[70px] max-h-[70px] rounded"
                 />
                 <div>
-                  <p dangerouslySetInnerHTML={{__html: process(item.highlightedText),}}/>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: process(item.highlightedText),
+                    }}
+                  />
                   <p className="text-gray-400 text-[15px] font-medium">
                     {item.tagToDisplay}
                   </p>

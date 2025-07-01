@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useGlobalContext } from "../Utils/Contex/ApiContext";
 import Veg from "../assets/Veg_symbol.svg";
 import NonVeg from "../assets/Non_veg_symbol.svg";
 
 const AccordionsCard = ({ info ,isLast }) => {
+  const [isMore,setIsMoare] = useState(false)
   const { cdn } = useGlobalContext();
   const { name, price, imageId, description, isVeg, defaultPrice } = info;
   const rating = info.ratings.aggregatedRating;
@@ -12,8 +13,8 @@ const AccordionsCard = ({ info ,isLast }) => {
   
 
   return (
-    <div className={"relative flex justify-between py-6 ml-3 mr-3 font-gilroy "+ (isLast ? "" : "border-b-1 border-gray-300")}>
-      <div className="flex flex-col justify-center mt-2 ">
+    <div className={"relative max-w-[100%] flex justify-between py-6 ml-3 mr-3 font-gilroy "+ (isLast ? "" : "border-b-1 border-gray-300")}>
+      <div className="flex flex-col justify-center mt-2  ">
         <img className=" w-[20px]" src={isVeg ? Veg : NonVeg} />
         <p className="font-bold text-[18px] text-gray-600">{name}</p>
         <p className="font-bold">₹{Number(price || defaultPrice) / 100}</p>
@@ -42,13 +43,14 @@ const AccordionsCard = ({ info ,isLast }) => {
         )}
         
         
-        <p className="relative text-gray-400 font-medium mt-2">{(description?.length > 15 ? description.slice(0,150) + "..." : description  )|| name}
-        <buttom className="absolute top-7 left-[75.5%] ">more</buttom></p>
+        <p className=" text-gray-500 font-medium text-wrap  mt-2 ">{isMore ? description : (description?.length > 180 ? description?.slice(0,180)  : description  )|| name}
+         {description && description?.length  > 150 && <span onClick={()=>setIsMoare(!isMore)} className={"text-gray-500 font-bold cursor-pointer " + (isMore ? "hidden" : "")}>...more</span>}</p>
+
           
        
 
       </div>
-      <div className="relative flex justify-center items-center">
+      <div className="relative flex justify-center items-center pl-2">
         <img
           src={cdn + imageId}
           className="min-w-[150px] h-[150px] rounded-2xl"

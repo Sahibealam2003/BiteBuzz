@@ -92,7 +92,7 @@ const Menu = () => {
       {menuData.length === 0 ? (
         <RiseLoader2 />
       ) : (
-        <div className=" w-[65vw] mx-auto mt-10 font-gilroy flex flex-col ">
+        <div className=" max-w-[72vw] mx-auto mt-10 font-gilroy flex flex-col ">
           <h1 className="font-extrabold ml-3 text-3xl">{resData.name}</h1>
 
           {/* MenuBox */}
@@ -229,6 +229,17 @@ const Menu = () => {
           </div>
 
           {/* SEARCH BUTTON */}
+
+
+          <div className="relative w-[100%] flex justify-center mb-13">
+          <input
+            type="text"
+            placeholder="Hira Beta"
+            className=" placeholder-gray-500 placeholder:font-bold placeholder:text-center bg-gray-100  rounded-2xl w-[80%] caret-[#FE5005] h-[45px] px-3 outline-none"
+          />
+          <i className="mr-1 fa-solid text-gray-600 fa-magnifying-glass absolute top-4 right-26"></i>
+        
+        </div>
 
           <hr className="w-[100%] border border-[rgba(2,6,12,0.05)]" />
 

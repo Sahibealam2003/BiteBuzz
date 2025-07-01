@@ -78,9 +78,9 @@ const ResNavbar = () => {
         </div>
 
         <div className='flex gap-6'>
-          <button  onClick={()=>navigate('/search')} ><i className="mr-1 fa-solid fa-magnifying-glass"></i>Search</button>
-          <button><i className="mr-1 fa-solid fa-tags"></i>Offers</button>
-          <button><i className="mr-1 fa-solid fa-cart-shopping"></i>Cart</button>
+          <button  onClick={()=>navigate('/search')} className='cursor-pointer font-medium hover:text-orange-400' ><i className="mr-1 text-[13px] fa-solid fa-magnifying-glass"></i>Search</button>
+          <button className='cursor-pointer font-medium hover:text-orange-400'><i className="mr-1 fa-solid fa-tags"></i>Offers</button>
+          <button className='cursor-pointer font-medium hover:text-orange-400'><i className="mr-1 fa-solid fa-cart-shopping"></i>Cart</button>
         </div>
       </nav>
     </div>

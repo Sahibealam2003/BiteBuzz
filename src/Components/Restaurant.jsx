@@ -271,9 +271,11 @@ const Restaurant = () => {
                     <button
                       title="Click to Show all Cities"
                       onClick={toggleShowMore}
-                      className="border-2 font-medium rounded-2xl text-orange-500 h-[60px] w-[80%] border-gray-200 mt-2 flex items-center justify-center"
+                      className="cursor-pointer border-2 font-medium rounded-2xl text-orange-500 h-[60px] w-[80%] border-gray-200 mt-2 flex items-center justify-center"
                     >
-                      <p>Show More</p>
+                      
+                      
+                      {isExpanded ? <p>Show Less</p> : <p>Show More</p>}
                       <svg
                         className={`mt-1 transition-transform duration-400 ${
                           isExpanded ? "rotate-180" : ""
@@ -308,9 +310,9 @@ const Restaurant = () => {
                     <button
                       title="Click to Show all Cuisines"
                       onClick={toggleShowMoreCuisines}
-                      className="border-2 font-medium rounded-2xl text-orange-500 h-[60px] w-[80%] border-gray-200 mt-2 flex items-center justify-center"
+                      className="cursor-pointer border-2 font-medium rounded-2xl text-orange-500 h-[60px] w-[80%] border-gray-200 mt-2 flex items-center justify-center"
                     >
-                      <p>Show More</p>
+                      {isExpandedCuisines ? <p>Show Less</p> : <p>Show More</p>}
                       <svg
                         className={`mt-1 transition-transform duration-400 ${
                           isExpandedCuisines ? "rotate-180" : ""

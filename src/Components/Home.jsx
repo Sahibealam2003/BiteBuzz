@@ -47,8 +47,11 @@ const Home = () => {
                 <div className='relstive'> <img src={right} className='drop-shadow-[0_30px_9px_rgba(000,000,000,0.5)] w-[240px] absolute  bottom-[0px] right-0' /></div>
                 {/* Section Idhar hai */}
                 <section className='w-[100%] flex flex-col justify-center items-center '>
-                    <p className='text-[50px] font-bold text-shimmer '>Order food & groceries. </p>
+
+                
+                        <p className='text-[50px] font-bold text-shimmer '>Order food & groceries. </p>
                     <p className='text-[45px] font-bold leading-none  text-shimmer '>Discover best restaurants. Swiggy it!</p>
+                
 
                     <div className='mt-[60px] text-black relative'>
                         <input className='border-none bg-white rounded h-[50px] w-[400px] placeholder-gray-400 px-2 focus:outline-none focus:border-none' placeholder='Search for restaurant, item or more' />

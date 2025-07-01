@@ -2,10 +2,10 @@ import React from "react";
 
 const Skeleton = () => {
   return (
-    <div className="grid grid-cols-4 w-[80vw] gap-5 mx-auto mt-20">
+    <div className="grid grid-cols-4 w-[90vw] gap-5 mx-auto mt-20">
       <div
         role="status"
-        className="flex items-center justify-center h-56 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
+        className="flex items-center justify-center h-45 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
       >
         <svg
           className="w-10 h-10 text-gray-200 dark:text-gray-600"
@@ -22,7 +22,7 @@ const Skeleton = () => {
 
       <div
         role="status"
-        className="flex items-center justify-center h-56 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
+        className="flex items-center justify-center h-45 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
       >
         <svg
           className="w-10 h-10 text-gray-200 dark:text-gray-600"
@@ -39,7 +39,7 @@ const Skeleton = () => {
 
       <div
         role="status"
-        className="flex items-center justify-center h-56 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
+        className="flex items-center justify-center h-45 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
       >
         <svg
           className="w-10 h-10 text-gray-200 dark:text-gray-600"
@@ -56,7 +56,7 @@ const Skeleton = () => {
 
       <div
         role="status"
-        className="flex items-center justify-center h-56 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
+        className="flex items-center justify-center h-45 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
       >
         <svg
           className="w-10 h-10 text-gray-200 dark:text-gray-600"
@@ -73,7 +73,7 @@ const Skeleton = () => {
 
       <div
         role="status"
-        className="flex items-center justify-center h-56 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
+        className="flex items-center justify-center h-45 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
       >
         <svg
           className="w-10 h-10 text-gray-200 dark:text-gray-600"
@@ -90,7 +90,7 @@ const Skeleton = () => {
 
       <div
         role="status"
-        className="flex items-center justify-center h-56 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
+        className="flex items-center justify-center h-45 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
       >
         <svg
           className="w-10 h-10 text-gray-200 dark:text-gray-600"
@@ -107,7 +107,7 @@ const Skeleton = () => {
 
       <div
         role="status"
-        className="flex items-center justify-center h-56 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
+        className="flex items-center justify-center h-45 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
       >
         <svg
           className="w-10 h-10 text-gray-200 dark:text-gray-600"
@@ -124,7 +124,7 @@ const Skeleton = () => {
 
       <div
         role="status"
-        className="flex items-center justify-center h-56 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
+        className="flex items-center justify-center h-45 max-w-sm bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
       >
         <svg
           className="w-10 h-10 text-gray-200 dark:text-gray-600"
