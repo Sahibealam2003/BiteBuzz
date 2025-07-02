@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../Utils/Contex/ApiContext";
 import Veg from "../assets/Veg_symbol.svg";
 import NonVeg from "../assets/Non_veg_symbol.svg";
+import { useDispatch } from "react-redux";
+import { addItems } from "../Utils/store/CartSlice";
+import toast from "react-hot-toast";
 
 const AccordionsCard = ({ info ,isLast }) => {
+  const dispatch=useDispatch()
   const [isMore,setIsMoare] = useState(false)
   const { cdn } = useGlobalContext();
   const { name, price, imageId, description, isVeg, defaultPrice } = info;
@@ -56,7 +60,13 @@ const AccordionsCard = ({ info ,isLast }) => {
           className="min-w-[150px] h-[150px] rounded-2xl"
           alt=""
         />
-        <button className="rounded-xl shadow-2xs border border-gray-300 text-green-600 bg-white text-wrap font-bold px-10 py-2 absolute -bottom-2 ">ADD</button>
+        <button 
+        
+        onClick={()=>{
+          dispatch(addItems(info))
+          toast.success(`${name} added successfully`)
+        }}
+        className="cursor-pointer rounded-xl shadow-2xs border border-gray-300 text-green-600 bg-white text-wrap font-bold px-10 py-2 absolute -bottom-2 ">ADD</button>
       </div>
     </div>
   );

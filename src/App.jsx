@@ -10,6 +10,7 @@ import { lazy } from "react";
 import { Suspense } from "react";
 import RiseLoader2 from "./Components/RiseLoader2";
 import ResNavbar from "./Components/ResNavbar";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Restaurant = lazy(() => import("./Components/Restaurant"));
 const Error = lazy(() => import("./Components/Error"));
@@ -30,6 +31,7 @@ const App = () => {
   return (
     <>
       <div>
+      <Toaster/> 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
