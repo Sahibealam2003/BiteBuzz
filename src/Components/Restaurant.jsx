@@ -98,7 +98,7 @@ const Restaurant = () => {
 
   return (
     <div>
-      <ResNavbar />
+      
       {!allData ? (
         <RiseLoader2 />
       ) : (
