@@ -2,24 +2,37 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../Utils/Contex/ApiContext";
 import Veg from "../assets/Veg_symbol.svg";
 import NonVeg from "../assets/Non_veg_symbol.svg";
-import { useDispatch } from "react-redux";
-import { addItems } from "../Utils/store/CartSlice";
-import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { addItems, removeItems } from "../Utils/store/CartSlice";
+import { useParams } from "react-router-dom";
+import Modals from "./Modals";
+import notAvailable from "../assets/notAvailable.jpg";
 
-const AccordionsCard = ({ info ,isLast }) => {
-  const dispatch=useDispatch()
-  const [isMore,setIsMoare] = useState(false)
-  const { cdn } = useGlobalContext();
-  const { name, price, imageId, description, isVeg, defaultPrice } = info;
-  const rating = info.ratings.aggregatedRating;
-
-  
-  
+const AccordionsCard = ({ info, isLast }) => {
+  const dispatch = useDispatch();
+  const [isMore, setIsMore] = useState(false);
+  const { cdn,showModals,setShowModals } = useGlobalContext();
+  const { name, price, imageId, description, isVeg, defaultPrice, id } = info;
+  const rating = info?.ratings?.aggregatedRating || {};
+  const { itemId } = useParams();
+  const cartData = useSelector((store) => store.cart);
+  const foundItem = cartData.data.find((item) => {
+    return item.id == id;
+  });
 
   return (
-    <div className={"relative max-w-[100%] flex justify-between py-6 ml-3 mr-3 font-gilroy "+ (isLast ? "" : "border-b-1 border-gray-300")}>
+    <div
+      className={
+        "relative max-w-[100%] flex justify-between py-6 ml-3 mr-3 font-gilroy " +
+        (isLast ? "" : "border-b-1 border-gray-300")
+      }
+    >
       <div className="flex flex-col justify-center mt-2  ">
-        <img className=" w-[20px]" src={isVeg ? Veg : NonVeg} />
+        <img
+          className=" w-[20px]"
+          src={isVeg ? Veg : NonVeg}
+          alt={isVeg ? "Veg" : "Non-Veg"}
+        />
         <p className="font-bold text-[18px] text-gray-600">{name}</p>
         <p className="font-bold">₹{Number(price || defaultPrice) / 100}</p>
         {rating.ratingCountV2 && (
@@ -45,28 +58,65 @@ const AccordionsCard = ({ info ,isLast }) => {
             </span>
           </div>
         )}
-        
-        
-        <p className=" text-gray-500 font-medium text-wrap  mt-2 ">{isMore ? description : (description?.length > 180 ? description?.slice(0,180)  : description  )|| name}
-         {description && description?.length  > 150 && <span onClick={()=>setIsMoare(!isMore)} className={"text-gray-500 font-bold cursor-pointer " + (isMore ? "hidden" : "")}>...more</span>}</p>
 
-          
-       
-
+        <p className=" text-gray-500 font-medium text-wrap  mt-2 ">
+          {isMore
+            ? description
+            : (description?.length > 180
+                ? description?.slice(0, 180)
+                : description) || name}
+          {description && description?.length > 150 && (
+            <span
+              onClick={() => setIsMore(!isMore)}
+              className={
+                "text-gray-500 font-bold cursor-pointer " +
+                (isMore ? "hidden" : "")
+              }
+            >
+              ...more
+            </span>
+          )}
+        </p>
       </div>
-      <div className="relative flex justify-center items-center pl-2">
+      <div className="relative max-w-[150px] max-h-[150px] flex justify-center items-center pl-2">
         <img
-          src={cdn + imageId}
+          src={imageId ? cdn + imageId : notAvailable}
           className="min-w-[150px] h-[150px] rounded-2xl"
           alt=""
         />
-        <button 
-        
-        onClick={()=>{
-          dispatch(addItems(info))
-          toast.success(`${name} added successfully`)
-        }}
-        className="cursor-pointer rounded-xl shadow-2xs border border-gray-300 text-green-600 bg-white text-wrap font-bold px-10 py-2 absolute -bottom-2 ">ADD</button>
+
+        {!foundItem ? (
+          <button
+            onClick={() => {
+              if (cartData.id && cartData.id != itemId) {
+                setShowModals(true);
+              }
+              dispatch(addItems({ info, itemId }));
+            }}
+            className="cursor-pointer rounded-xl shadow-md border border-gray-300 text-green-600 bg-white hover:bg-green-50 font-bold px-8 py-1 absolute -bottom-4 transition duration-200"
+          >
+            ADD
+          </button>
+        ) : (
+          <div className="flex items-center gap-3 bg-white border border-gray-300 rounded-xl shadow-md px-4 py-1 absolute -bottom-4">
+            <button
+              className="text-xl text-green-600 font-bold hover:bg-green-100 rounded-full w-5 h-5 flex items-center justify-center"
+              onClick={() => dispatch(addItems({ info, itemId }))} // or handleIncrement
+            >
+              +
+            </button>
+            <p className="text-base font-semibold text-gray-700">
+              {foundItem.quantity}
+            </p>
+            <button
+              className="text-xl text-red-600 font-bold hover:bg-red-100 rounded-full w-5 h-5 flex items-center justify-center"
+              onClick={() => dispatch(removeItems({ id }))} // You should define this handler
+            >
+              −
+            </button>
+          </div>
+        )}
+       
       </div>
     </div>
   );

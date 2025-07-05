@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { replace, useParams } from "react-router-dom";
+import { replace, useNavigate, useParams } from "react-router-dom";
 import { useGlobalContext } from "../Utils/Contex/ApiContext";
 import ResNavbar from "./ResNavbar";
 import RiseLoader2 from "./RiseLoader2";
@@ -10,6 +10,7 @@ import appStore from "../assets/appStore.png";
 import playStore from "../assets/playStore.png";
 
 const Menu = () => {
+  const navigate=useNavigate()
   const { itemId } = useParams();
   const [menuData, setMenuData] = useState([]);
   const [resData, setResData] = useState({});
@@ -87,6 +88,7 @@ const Menu = () => {
 
   return (
     <div>
+
       <ResNavbar />
 
       {menuData.length === 0 ? (
@@ -171,7 +173,7 @@ const Menu = () => {
             >
               {topDeals.length > 0 &&
                 topDeals.map((item) => {
-                  console.log(item);
+              
                   
                   return (
                     <div
@@ -233,9 +235,12 @@ const Menu = () => {
 
           <div className="relative w-[100%] flex justify-center mb-13">
           <input
+          onClick={()=>{
+            navigate('/search')
+          }}
             type="text"
-            placeholder="Hira Beta"
-            className=" placeholder-gray-500 placeholder:font-bold placeholder:text-center bg-gray-100  rounded-2xl w-[80%] caret-[#FE5005] h-[45px] px-3 outline-none"
+            placeholder="Search for restaurants and food"
+            className=" placeholder-gray-500 placeholder:font-bold placeholder:text-center bg-gray-100  rounded cursor-pointer   w-[80%] caret-[#FE5005] h-[45px] px-3 outline-none"
           />
           <i className="mr-1 fa-solid text-gray-600 fa-magnifying-glass absolute top-4 right-26"></i>
         
@@ -287,9 +292,9 @@ const Menu = () => {
                             item.dish.info.price || item.dish.info.defaultPrice
                           ) / 100}
                         </p>
-                        <button className="float-right absolute bottom-3 rounded-xl text-green-600 bg-white text-wrap font-bold right-6  px-8 py-2">
+                        {/* <button className="float-right absolute bottom-3 rounded-xl text-green-600 bg-white text-wrap font-bold right-6  px-8 py-2">
                           ADD
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                   </div>

@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import AccordionsCard from "./AccordionsCard";
+import Modals from "./Modals";
+import { useGlobalContext } from "../Utils/Contex/ApiContext";
 
 const Accordions = ({ title, data, nested ,isLast }) => {
-  const [isExpandedAccordions, setIsExpandedAccordions] = useState();
-
+  const [isExpandedAccordions, setIsExpandedAccordions] = useState(true);
+const{setShowModals,showModals}=useGlobalContext()
 
   return (
     <div className={"w-[100%] pb-2 "+(nested ? (isLast ? "": "border-b  border-gray-300") : "") }>
+     {showModals && <Modals onClose={() => setShowModals(false)} />}
+
       <div className=" flex justify-between">
         <p className={`mt-3 ml-3 ${nested ? "text-[15px] font-medium " : "text-[20px] font-bold"}`}>
           {title}({data.length})

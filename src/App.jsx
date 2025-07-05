@@ -12,6 +12,7 @@ import RiseLoader2 from "./Components/RiseLoader2";
 import ResNavbar from "./Components/ResNavbar";
 import toast, { Toaster } from 'react-hot-toast';
 
+
 const Restaurant = lazy(() => import("./Components/Restaurant"));
 const Error = lazy(() => import("./Components/Error"));
 const SliderItemData = lazy(() => import("./Components/SliderItemData"));

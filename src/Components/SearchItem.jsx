@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ResNavbar from "./ResNavbar";
-import { useGlobalContext } from "../Utils/Contex/ApiContext";
-
+import { useGlobalContext } from "../Utils/Contex/ApiContext"
+import SearchSkeleton from './SearchSkeleton'
 const SearchItem = () => {
   const [suggestion, setSuggestions] = useState([]);
   const [query, setQuery] = useState("");
@@ -9,10 +9,10 @@ const SearchItem = () => {
 
   const { cdn, lat, long } = useGlobalContext();
   useEffect(() => {
-    if (!query) {
-      setSuggestions("");
-      return;
-    }
+     if (!query) {
+    setSuggestions([]); 
+    return;
+  }
     const timerID = setTimeout(() => {
       async function getItem() {
         const res = await fetch(
@@ -40,7 +40,7 @@ const SearchItem = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             type="text"
-            placeholder="Hira Beta"
+            placeholder="Search for restaurants and food"
             className="border placeholder-gray-600 placeholder:font-bold border-gray-400 rounded w-[100%] caret-[#FE5005] h-[45px] px-3 outline-none"
           />
 
@@ -57,7 +57,8 @@ const SearchItem = () => {
           )}
         </div>
       </div>
-      {suggestion && (
+     
+      {query && suggestion.length ===0  ? <SearchSkeleton/> : (
         <div className="mt-4">
           {suggestion.map((item, index) => {
             const part = item.highlightedText;
@@ -87,6 +88,7 @@ const SearchItem = () => {
           })}
         </div>
       )}
+    
     </div>
   );
 };
