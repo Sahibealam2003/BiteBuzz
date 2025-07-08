@@ -42,7 +42,7 @@ const SliderItemData = () => {
       <ResNavbar />
       
       {/* Header */}
-      <h2 className=" text-5xl font-bold ml-15 mt-6 capitalize">{text}</h2>
+      <h2 className=" text-5xl font-bold ml-15 mt-25 capitalize">{text}</h2>
       <p className=" text-[20px] ml-14 mt-2 text-gray-600">{description}</p>
       {/* Loader or Content */}
       {itemData.length === 0 ? <Skeleton /> :

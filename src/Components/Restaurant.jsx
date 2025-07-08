@@ -102,9 +102,9 @@ const Restaurant = () => {
       {!allData ? (
         <RiseLoader2 />
       ) : (
-        <div className=" min-h-screen font-gilroy">
+        <div className="z-1  min-h-screen font-gilroy">
           {sliderData && (
-            <div className=" w-[80vw] h-auto mx-auto mt-10 mb-15 bg-white">
+            <div className=" w-[80vw] h-auto mx-auto mt-25 mb-15 bg-white">
               <div className="w-[80vw] mx-auto mt-10 bg-white">
                 <div className="flex justify-between items-center mb-4">
                   <p className="font-bold text-xl">What's on your mind?</p>
@@ -126,9 +126,9 @@ const Restaurant = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="absolute left-0 top-0 h-full w-10 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+                  <div className=" absolute left-0 top-0 h-full w-10 bg-gradient-to-r from-white to-transparent z-3 pointer-events-none" />
 
-                  <div className="absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+                  <div className="absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-white to-transparent z-3 pointer-events-none" />
 
                   <div
                     id="slider"
@@ -341,7 +341,7 @@ const Restaurant = () => {
                   </div>
                 </div>
               </div>
-              <hr className="border border-[rgba(2,6,12,0.05)]" />
+              {/* <hr className="border border-[rgba(2,6,12,0.05)]" /> */}
             </div>
           )}
 
@@ -557,8 +557,11 @@ const Restaurant = () => {
                 {!isExpandedCities ? (
                   ""
                 ) : (
+                  
                   <div className="mt-5">
-                    <h2 className="text-xl font-bold">
+              <hr className="border border-[rgba(2,6,12,.50)]" />
+
+                    <h2 className="text-xl mt-5 font-bold">
                       Other cities that we deliver:
                     </h2>
                     <ul className="grid grid-cols-4 mt-2">
@@ -581,6 +584,8 @@ const Restaurant = () => {
               </div>
             </div>
           </footer>
+
+
         </div>
       )}
     </div>

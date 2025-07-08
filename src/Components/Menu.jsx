@@ -94,7 +94,7 @@ const Menu = () => {
       {menuData.length === 0 ? (
         <RiseLoader2 />
       ) : (
-        <div className=" max-w-[72vw] mx-auto mt-10 font-gilroy flex flex-col ">
+        <div className=" max-w-[72vw] mx-auto mt-25 font-gilroy flex flex-col ">
           <h1 className="font-extrabold ml-3 text-3xl">{resData.name}</h1>
 
           {/* MenuBox */}
@@ -292,9 +292,7 @@ const Menu = () => {
                             item.dish.info.price || item.dish.info.defaultPrice
                           ) / 100}
                         </p>
-                        {/* <button className="float-right absolute bottom-3 rounded-xl text-green-600 bg-white text-wrap font-bold right-6  px-8 py-2">
-                          ADD
-                        </button> */}
+                       
                       </div>
                     </div>
                   </div>

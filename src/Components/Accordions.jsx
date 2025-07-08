@@ -38,10 +38,10 @@ const{setShowModals,showModals}=useGlobalContext()
           <div>
             {data.map((item,index) => {
               return (
-                <>
+                <div key={index}>
                 <AccordionsCard isLast={index==data.length-1}  info={item.card.info}/>
                 
-                </>
+                </div>
               )
             })}
           </div>
