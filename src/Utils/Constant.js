@@ -1,1 +1,0 @@
-const api_key="AIzaSyApyL-vV23rG2Q404BLoK4fpxdkQUWFghM"
