@@ -101,7 +101,9 @@ const ResNavbar = () => {
             <i className="mr-1 text-sm fa-solid fa-magnifying-glass"></i>Search
           </button>
 
-              <button className="cursor-pointer text-gray-700 font-medium hover:text-orange-500 transition">
+              <button
+              onClick={()=>navigate('/help')}
+               className="cursor-pointer text-gray-700 font-medium hover:text-orange-500 transition">
               <i className="mr-1 fa-solid fa-circle-question"></i> Help
             
           </button>

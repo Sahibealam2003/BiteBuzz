@@ -12,6 +12,7 @@ import RiseLoader2 from "./Components/RiseLoader2";
 import ResNavbar from "./Components/ResNavbar";
 import toast, { Toaster } from 'react-hot-toast';
 import Cart from "./Components/Cart";
+import Help from "./Components/Help";
 
 
 const Restaurant = lazy(() => import("./Components/Restaurant"));
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+          <Route element={<Help />} path="/help" />
           <Route path="/search" element={<SearchItem />} />
           <Route
             path="/restaurants"
